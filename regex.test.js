@@ -18,19 +18,9 @@ which end with io (example@example.io) */
 
 function ioEmail(email) {
     // Add your logic.
-    let regex = /.io$/
-    if (!regex.test(email)) {
-        return false;
-    }
-    let components = email.split('@');
-    if (components.length !== 2) {
-        return false;
-    }
-    let domainParts = email.split('.');
-    if (domainParts.length !== 2) {
-        return false;
-    }
-    return true;
+    let regex = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9-]+.(io|IO)$/;
+    return regex.test(email);
+    
 
 }
 
